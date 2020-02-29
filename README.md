@@ -172,3 +172,30 @@ can deliver on the following optional goals:
 - [ ] Add an `ADDI` extension instruction to add an immediate value to a register
 - [ ] Add timer interrupts
 - [ ] Add keyboard interrupts
+
+
+1) Since the ALU is an arithmetic logic unit, it is activated
+   when we are using math operators such as addition, substraction,
+   multiplication, division, etc. (arithmetic)
+   It also gets activated when we are using NOT, AND, OR operators (logic)
+
+2) CPU stack is basically a data structure inside a CPU.
+   So it's purpose is to store values temporarily, so you
+   could free up registers if need be. You could also save registers
+   to restore them after an interruption lets say. All in all, it's
+   purpose is to allow the computer to chain commands and use complex 
+   operations.
+
+3) Since hex and binary have the same base, we can divide the binary number
+   into nybbles so instead of 11010101 we can make 1101 0101 and then calculate
+   in chunks and combine them:
+
+   1101 = 1x8 + 1x4 + 0x2 + 1x1 = d
+   0101 = 0x8 + 1x4 + 0x2 + 1x1 = 5
+
+   and we combine them, and we get `d5`
+
+   OR 
+   
+   We can also do this:
+   `print(hex(0b11010101))`
